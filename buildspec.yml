@@ -2,17 +2,15 @@ version: 0.1
 
 phases:
     install:
-         commands:
+        commands:
             - apt-get -y update
             - apt-get -y install zip
             - npm install -g serverless@1.9.0
+
     build:
-         commands:
+        commands:
             - ./build.sh
   
-artifacts:
-    files:
-         - serverless.yml
-         - publish.zip
-         - promotion.sh
-    discard-paths: yes
+    post_build:
+        commands:
+            - sls deploy -v -s $STAGE
