@@ -1,0 +1,29 @@
+service: rea-docx-parser
+custom:
+  bucket: itrent-import-dev-srcbucket
+provider:
+  name: aws
+  runtime: dotnetcore2.1
+  stage: dev
+  region: eu-west-2
+ 
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+       - "s3:*"
+      Resource:  "*" 
+package:
+  artifact: src/iTrentImport/bin/Release/netstandard2.0/publish/deploy-package.zip
+#  exclude:
+#    - exclude-me.js
+#    - exclude-me-dir/**
+
+functions:
+  process:
+    handler: CsharpHandlers::AwsDotnetCsharp.Handler::Process
+    events:
+     - s3: 
+          bucket:  ${self:custom.bucket}
+          event:  s3:ObjectCreated:*
+          rules:
+            - suffix: .docx
