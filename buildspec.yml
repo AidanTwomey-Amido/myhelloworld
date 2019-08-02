@@ -15,4 +15,4 @@ artifacts:
          - serverless.yml
          - publish.zip
          - promotion.sh
-    discard-paths:
+    discard-paths: yes
