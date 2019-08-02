@@ -111,8 +111,7 @@ resource "aws_codebuild_project" "itrentimport" {
 
   source {
     type            = "GITHUB"
-    location        = "https://github.com/andrew-charlez/Hello-World-.git"
+    location        = "https://github.com/andrew-charlez/myhelloworld"
     git_clone_depth = 1
   }
 }
-
