@@ -10,10 +10,6 @@ phases:
     build:
         commands:
             - ./build.sh
-  
-    post_build:
-        commands:
-            - sls deploy -v
     
 
 artifacts:
