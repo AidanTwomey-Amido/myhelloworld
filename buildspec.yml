@@ -11,11 +11,6 @@ phases:
         commands:
             - ./build.sh
   
-    post_build:
-        commands:
-            - sls deploy -v
-    
-
 artifacts:
     files:
          - serverless.yml
