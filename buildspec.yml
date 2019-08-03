@@ -13,4 +13,12 @@ phases:
   
     post_build:
         commands:
-            - sls deploy -v -s $STAGE
+            - sls deploy -v
+    
+
+artifacts:
+    files:
+         - serverless.yml
+         - publish.zip
+         - promotion.sh
+    discard-paths: yes
