@@ -12,11 +12,6 @@ provider:
       Action:
        - "s3:*"
       Resource:  "*" 
-package:
-  artifact: src/iTrentImport/bin/Release/netstandard2.0/publish/deploy-package.zip
-#  exclude:
-#    - exclude-me.js
-#    - exclude-me-dir/**
 
 functions:
   process:
