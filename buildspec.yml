@@ -12,6 +12,8 @@ phases:
             dotnet: 2.2
         commands:
             - dotnet publish -c release
+            - pushd src/iTrentImport/bin/release/netstandard2.0/publish
+            - zip -r ./deploy-package.zip ./*
     post_build:
         commands:
             - serverless deploy --stage dev --verbose
