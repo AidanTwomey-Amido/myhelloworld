@@ -5,7 +5,7 @@ provider:
   name: aws
   runtime: dotnetcore2.1
   stage: dev
-  region: eu-west-2
+  region: eu-west-1
  
   iamRoleStatements:
     - Effect: "Allow"
@@ -27,3 +27,5 @@ functions:
           event:  s3:ObjectCreated:*
           rules:
             - suffix: .docx
+
+

@@ -19,6 +19,8 @@ namespace AwsDotnetCsharp
         Message = message;
         Request = request;
       }
+
+      Console.WriteLine('whatever');
     }
 
     public class Request
