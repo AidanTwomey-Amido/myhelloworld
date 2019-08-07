@@ -18,9 +18,8 @@ namespace AwsDotnetCsharp
       public Response(string message, Request request){
         Message = message;
         Request = request;
+        Console.WriteLine($"Got: ${message}");
       }
-
-      Console.WriteLine('whatever');
     }
 
     public class Request
