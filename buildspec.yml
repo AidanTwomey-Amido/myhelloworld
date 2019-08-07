@@ -14,5 +14,5 @@ phases:
             - dotnet publish -c release
     post_build:
         commands:
-            - serverless deploy --stage dev --verbose
+            - SLS_DEBUG=1 serverless deploy --stage dev --verbose
   
