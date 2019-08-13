@@ -6,6 +6,7 @@ phases:
             dotnet: 2.2
         commands:
             - dotnet build
+            - dotnet test
             - npm install -g serverless
     build:
         runtime:
